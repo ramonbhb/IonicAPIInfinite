@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Usuários</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let usuario of users">
+    <h1>{{usuario.company.name}}</h1>
+  </div>
+  <!-- <ion-button (click)="salvarUsuario()">Salvar Usuario</ion-button>
+  <ion-button (click)="pegarUsuario()">Pegar Usuario</ion-button>
+  <div *ngIf="usuario">
+    {{ usuario.name }} | {{ usuario.username }}
+  </div> -->
+
+   <ion-infinite-scroll threshold="100px" (ionInfinite)="pegarDados($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Carregando dados...">
+    </ion-infinite-scroll-content>    
+   </ion-infinite-scroll>
+</ion-content>
