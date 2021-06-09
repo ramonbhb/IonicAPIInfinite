@@ -12,7 +12,7 @@ export class UsuariosPage implements OnInit {
   private readonly offset: number = 5;
 
   usersTotal: any;
-  users: any;
+  users: Usuarios;
   usuario: Usuario;
   constructor(public usuariosService: UsuariosService) { }
 
@@ -27,8 +27,7 @@ export class UsuariosPage implements OnInit {
     }
     this.usersTotal = users;
     this.users = usersFinal;
-    this.index += this.offset;
-    console.log(this.users);
+    this.index += this.offset;    
   }
 
   pegarDados(event) {

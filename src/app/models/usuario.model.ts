@@ -22,6 +22,5 @@ export interface Usuario {
     }
 }
 
-export interface Usuarios {
-    usuarios: Usuarios[]
+export interface Usuarios extends Array<Usuario>{}{   
 }
